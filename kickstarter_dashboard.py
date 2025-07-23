@@ -215,7 +215,7 @@ if kt_df is not None:
                 paper_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="success_rate_category")
             
             st.markdown("""
             **💡 Interpretation:** This chart shows which project categories have the highest success rates. 
@@ -238,7 +238,7 @@ if kt_df is not None:
                 paper_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="state_distribution")
             
             st.markdown("""
             **💡 Interpretation:** This pie chart shows the overall distribution of project outcomes. 
@@ -267,7 +267,7 @@ if kt_df is not None:
                 paper_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="projects_per_year")
 
         with col2:
             # Success rate per year
@@ -287,7 +287,7 @@ if kt_df is not None:
                 paper_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="success_rate_yearly")
 
         # Monthly trends
         st.subheader("📅 Monthly Patterns")
@@ -309,7 +309,7 @@ if kt_df is not None:
                 paper_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="projects_by_month")
 
         with col2:
             monthly_success = filtered_df.groupby('month')['state'].apply(
@@ -327,7 +327,7 @@ if kt_df is not None:
                 paper_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="success_rate_monthly")
 
     with tab3:
         st.subheader("💰 Financial Analysis")
@@ -352,7 +352,7 @@ if kt_df is not None:
                 paper_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="pledged_vs_goal")
             
             st.markdown("""
             **💡 Interpretation:** This scatter plot shows the relationship between funding goals and 
@@ -378,9 +378,7 @@ if kt_df is not None:
                 paper_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig, use_container_width=True)
-            
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="backers_vs_pledged")
             
             st.markdown("""
             **💡 Interpretation:** This chart shows how the number of backers relates to the total 
@@ -407,7 +405,7 @@ if kt_df is not None:
             paper_bgcolor='rgba(0,0,0,0)',
             font=dict(color='white')
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, key="financial_metrics_category")
 
     with tab4:
         st.subheader("🌍 Geographic & Category Analysis")
@@ -429,7 +427,7 @@ if kt_df is not None:
                 paper_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="top_countries")
 
         with col2:
             # Success rate by country
@@ -449,7 +447,7 @@ if kt_df is not None:
                 paper_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="success_rate_country")
 
         # Category popularity
         st.subheader("📂 Category Analysis")
@@ -474,7 +472,7 @@ if kt_df is not None:
             paper_bgcolor='rgba(0,0,0,0)',
             font=dict(color='white')
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, key="category_overview")
 
     with tab5:
         st.subheader("📊 Statistical Insights")
@@ -496,7 +494,7 @@ if kt_df is not None:
                 paper_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="goal_distribution_box")
 
         with col2:
             fig = px.box(
@@ -512,7 +510,7 @@ if kt_df is not None:
                 paper_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="backers_distribution_box")
 
         # Correlation analysis
         st.subheader("🔗 Correlation Analysis")
@@ -533,7 +531,7 @@ if kt_df is not None:
             paper_bgcolor='rgba(0,0,0,0)',
             font=dict(color='white')
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, key="correlation_matrix")
         
         st.markdown("""
         **💡 Interpretation:** The correlation matrix shows how different numerical variables relate to each other. 
