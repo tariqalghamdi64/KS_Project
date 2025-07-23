@@ -380,7 +380,7 @@ if kt_df is not None:
             )
             st.plotly_chart(fig, use_container_width=True)
             
-            st.markly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True)
             
             st.markdown("""
             **💡 Interpretation:** This chart shows how the number of backers relates to the total 
